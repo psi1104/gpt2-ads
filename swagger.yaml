@@ -1,0 +1,80 @@
+openapi: 3.0.1
+
+info:
+  title: ainize-gpt2-ads-swagger
+  description: |
+    Generate ads sentence
+    ---
+      How to use:
+      * Select short or long
+      * Input text
+      * Execute and wait little time
+  contact:
+    name: Ainizer - Sangil Park
+  version: "0.1"
+
+servers:
+  - url: https://main-gpt2-ads-psi1104.endpoint.ainize.ai/
+
+paths:
+  /gpt2-ads/short:
+    post:
+      requestBody:
+        required: true
+        description: "Generate grammer"
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                num_samples:
+                  type: string
+
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: binary
+
+        '400':
+          description: Bad Request
+
+        '500':
+          description: Server side error
+
+  /gpt2-ads/long:
+    post:
+      requestBody:
+        required: true
+        description: "Generate grammer"
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                num_samples:
+                  type: string
+                length:
+                  type: string
+
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: binary
+
+        '400':
+          description: Bad Request
+
+        '500':
+          description: Server side error
