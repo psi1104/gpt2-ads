@@ -5,3 +5,11 @@
 
 GPT-2 model that has been Fine Tuned to generate an advertisement.
 
+- API
+    - /gpt2-ads/short
+    - /gpt2-ads/long
+    
+- Example
+    - input : My name is Juila.
+        - long: I love Fashion and Writing. Get Your Fashion Styling Dream Job. Enquire Today!
+
